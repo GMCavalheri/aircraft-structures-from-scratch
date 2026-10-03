@@ -80,9 +80,10 @@ numbers are easy to follow.
 ```python
 from structures.composite_laminates import Laminate
 from structures.materials import ply
+
 lam = Laminate.from_angles(ply("T300/5208"), [0, 90, 0], 0.005)
-lam.A          # [[1.870e9, 4.345e7, 0], [4.345e7, 1.013e9, 0], [0, 0, 1.076e8]] Pa·m
-lam.engineering_constants()   # Ex 124.5 GPa, Ey 67.43 GPa, Gxy 7.17 GPa, nuxy 0.04292
+lam.A  # [[1.870e9, 4.345e7, 0], [4.345e7, 1.013e9, 0], [0, 0, 1.076e8]] Pa·m
+lam.engineering_constants()  # Ex 124.5 GPa, Ey 67.43 GPa, Gxy 7.17 GPa, nuxy 0.04292
 ```
 
 These match Kaw's printed values to every digit. The flexural moduli are 175.0 GPa in x and
@@ -141,7 +142,7 @@ necessarily fail there. `ply_by_ply_failure` then discounts each failed ply comp
 ($\bar{\mathbf Q} = 0$), re-solves, and repeats:
 
 ```python
-lam.ply_by_ply_failure(N=(1, 0, 0))   # [(7.277e6, [1]), (1.5e7, [0, 2])]
+lam.ply_by_ply_failure(N=(1, 0, 0))  # [(7.277e6, [1]), (1.5e7, [0, 2])]
 ```
 
 The 90° ply cracks at $N_x$ = 7.277 MN/m. The 0° plies then carry the whole load until fibre

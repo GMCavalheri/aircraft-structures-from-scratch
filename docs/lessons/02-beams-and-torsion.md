@@ -87,10 +87,14 @@ and couple, the roller force, $C_1$ and $C_2$: five unknowns and five equations.
 
 ```python
 from structures.beam_theory import Beam, Support, DistributedLoad, PointLoad
-s = Beam(3.0, 3e5).add(Support(0, "fixed"), Support(2.2),
-                       DistributedLoad(0, 3.0, -600.0), PointLoad(3.0, -900.0)).solve()
-s.reactions   # fixed: 203.2 N and -93.0 N·m; roller: 2496.8 N
-s.moment(2.2), s.deflection(3.0)   # -912 N·m (hogging), -1.60 mm
+
+s = (
+    Beam(3.0, 3e5)
+    .add(Support(0, "fixed"), Support(2.2), DistributedLoad(0, 3.0, -600.0), PointLoad(3.0, -900.0))
+    .solve()
+)
+s.reactions  # fixed: 203.2 N and -93.0 N·m; roller: 2496.8 N
+s.moment(2.2), s.deflection(3.0)  # -912 N·m (hogging), -1.60 mm
 ```
 
 The reactions add up to 2700 N = 600 × 3 + 900, which is a quick check worth doing every

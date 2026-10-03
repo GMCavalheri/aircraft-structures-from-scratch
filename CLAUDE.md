@@ -7,7 +7,8 @@ Plan: `AERO-02-aircraft-structures-from-scratch-PLAN.md` (tick the phase checkbo
 ## Commands
 - `uv sync` — install deps (numpy, scipy, matplotlib; dev: pytest, ruff, nbclient)
 - `uv run pytest` — tests
-- `uv run ruff check . && uv run ruff format --check .` — lint/format (CI runs both)
+- `uv run ruff check . && uv run ruff format --check .` — lint/format (CI runs both). Ruff also
+  formats the ```python blocks inside Markdown, so run it after editing docs too
 - `uv run python validation/run_all.py` — regenerate every validation figure (`docs/figures/`)
   and results table (`validation/results/`); single scripts also run on their own
 - `uv run python notebooks/build_notebooks.py` — regenerate and execute the notebooks (edit cell

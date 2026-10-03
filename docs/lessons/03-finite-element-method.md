@@ -136,12 +136,13 @@ $N_{AB} = -N_{AD}\cos\alpha$ = +6.667 kN.
 
 ```python
 from structures.fea_solver import Model
+
 m = Model()
 A, B, C, D = (m.add_node(*p) for p in [(0, 0), (2, 0), (4, 0), (2, 1.5)])
 bars = [m.add_bar(i, j, 200e9, 1e-3) for i, j in [(A, B), (B, C), (A, D), (D, C), (B, D)]]
 m.fix(A, "xy").fix(C, "y").load(B, fy=-10e3)
 s = m.solve()
-[s.axial_force(b) / 1e3 for b in bars]   # [6.667, 6.667, -8.333, -8.333, 10.0]
+[s.axial_force(b) / 1e3 for b in bars]  # [6.667, 6.667, -8.333, -8.333, 10.0]
 ```
 
 The truss is statically determinate, so the forces do not depend on E or A. The
