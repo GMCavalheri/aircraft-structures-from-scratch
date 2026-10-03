@@ -33,15 +33,17 @@ def simply_supported_udl(w, L, EI):
 
 
 def simply_supported_point_load(P, a, L, EI):
-    """Load P at distance a from the left support (b = L - a, a >= b): maximum deflection
-    P b (L^2 - b^2)^1.5 / (9 sqrt(3) L EI) at x = sqrt((L^2 - b^2)/3); reactions Pb/L, Pa/L."""
-    b = L - a
-    if a < b:
-        a, b = b, a
+    """Load P at distance a from the left support. With b_s = min(a, L - a) the distance to
+    the nearer support, the maximum deflection P b_s (L^2 - b_s^2)^1.5 / (9 sqrt(3) L EI) occurs
+    sqrt((L^2 - b_s^2) / 3) from the *farther* support. ``x_max`` is measured from the left.
+    Reactions P (L - a) / L (left) and P a / L (right); maximum moment P a (L - a) / L."""
+    b_s = min(a, L - a)
+    x_far = np.sqrt((L**2 - b_s**2) / 3)
     return {
-        "deflection": P * b * (L**2 - b**2) ** 1.5 / (9 * np.sqrt(3) * L * EI),
-        "x_max": np.sqrt((L**2 - b**2) / 3),
+        "deflection": P * b_s * (L**2 - b_s**2) ** 1.5 / (9 * np.sqrt(3) * L * EI),
+        "x_max": x_far if a >= L - a else L - x_far,
         "R_left": P * (L - a) / L,
+        "R_right": P * a / L,
         "moment": P * a * (L - a) / L,
     }
 

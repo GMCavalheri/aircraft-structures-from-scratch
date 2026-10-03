@@ -55,14 +55,14 @@ def test_simply_supported_udl():
     assert s.deflection(0) == pytest.approx(0, abs=1e-15)
 
 
-def test_simply_supported_offset_point_load():
-    a = 1.4
+@pytest.mark.parametrize("a", [1.4, 0.5])  # load right and left of midspan
+def test_simply_supported_offset_point_load(a):
     s = Beam(L, EI).add(Support(0), Support(L), PointLoad(a, -P)).solve()
     ref = closed_form.simply_supported_point_load(P, a, L, EI)
     x, v = s.extreme("deflection", n=20001)
     assert v == pytest.approx(-ref["deflection"], rel=1e-6)
     assert x == pytest.approx(ref["x_max"], abs=2e-4)
-    assert reactions(s)[0][0] == pytest.approx(ref["R_left"])
+    assert reactions(s)[0] == pytest.approx([ref["R_left"], ref["R_right"]])
     assert s.moment(a) == pytest.approx(ref["moment"])
 
 

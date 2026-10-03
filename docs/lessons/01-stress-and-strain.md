@@ -150,9 +150,10 @@ A point carries σx = −20 MPa, σy = 90 MPa and τxy = 60 MPa.
 
 ```python
 from structures.stress_strain import principal_2d, von_mises, tresca
+
 s = [-20e6, 90e6, 60e6]
-principal_2d(s)            # (116.39e6, -46.39e6, 1.1564 rad = 66.26 deg)
-von_mises(s), tresca(s)    # (145.3e6, 162.8e6)
+principal_2d(s)  # (116.39e6, -46.39e6, 1.1564 rad = 66.26 deg)
+von_mises(s), tresca(s)  # (145.3e6, 162.8e6)
 ```
 
 ## 7. From equations to code
