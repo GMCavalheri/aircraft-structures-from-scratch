@@ -163,13 +163,13 @@ def plate_k():
             "Plate k at a/b = 1, 2, 3",
             ", ".join(f"{compression_k(x)[0]:.4f}" for x in (1, 2, 3)),
             "4, 4, 4",
-            "Timoshenko & Gere 9.2",
+            "Timoshenko & Gere, Ch. 9",
         ],
         [
             "Plate k at a/b = √2 (m = 1/2 crossover)",
             f"{compression_k(np.sqrt(2))[0]:.4f}",
             "4.5",
-            "Timoshenko & Gere 9.2",
+            "Timoshenko & Gere, Ch. 9",
         ],
     ]
 

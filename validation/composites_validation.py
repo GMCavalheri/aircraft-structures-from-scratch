@@ -174,7 +174,7 @@ def figure_angle_ply():
             "νxy > 1 is possible for angle plies",
             "CLT",
         ],
-        ["[±45]s Gxy / G12", f"{Gxy[45] / HT.G12:.2f}", "max of Gxy over θ", "CLT"],
+        ["[±45]s Gxy / G12", f"{Gxy[45] / HT.G12:.2f}", "Gxy peaks at ±45°", "CLT"],
     ]
 
 
