@@ -68,7 +68,7 @@ Reading the matrix:
 |---|---|---|
 | $A_{16}, A_{26}$ | stretching ↔ in-plane shear | balanced: every +θ ply has a −θ ply |
 | **B** | stretching ↔ bending/twisting | symmetric about the mid-plane |
-| $D_{16}, D_{26}$ | bending ↔ twisting | only for 0/90 layups; small if ±θ plies are close together |
+| $D_{16}, D_{26}$ | bending ↔ twisting | no off-axis plies, or antisymmetric layups (which have B ≠ 0); small when ±θ plies sit next to each other |
 
 An unsymmetric [0/90] laminate has $B_{11} = -B_{22}$: pull it and it curls. Cured flat, it warps
 on cooling for the same reason. Aircraft laminates are symmetric and balanced almost without
