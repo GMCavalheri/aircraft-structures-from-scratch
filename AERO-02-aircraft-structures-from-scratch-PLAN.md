@@ -72,7 +72,7 @@ aircraft-structures-from-scratch/
 
 ## Portfolio Differentiators
 - A hand-built FEA solver is a strong, concrete signal of structural mechanics fluency — most portfolios show FEA *usage*, not FEA *implementation*.
-- The fatigue module connects directly to real airline reliability work (S-N/Miner's rule underlies real aircraft structural life limits), tying this project back to your day-to-day role at GOL.
+- The fatigue module uses the same S-N/Miner's-rule methods that underlie real aircraft structural life limits.
 
 ## Possible Extensions
 - Extend the FEA solver to 2D plate/shell elements
