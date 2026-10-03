@@ -82,7 +82,12 @@ equally damaging fully reversed amplitude $S_{ar}$:
 ![Haigh diagram](../figures/lessons/l6_haigh.png)
 
 The constant-life diagram shows the disagreement at a glance. The dashed curve is what the
-2024-T3 data imply (MIL-HDBK-5J): above 30 ksi mean, every simple model is conservative.
+2024-T3 data imply (MIL-HDBK-5J).
+- Soderberg and SWT sit below it, so they are conservative.
+- Goodman is slightly unconservative below about 25 ksi mean and conservative above.
+- Gerber is unconservative up to about 50 ksi.
+
+For this alloy the data favour SWT-like behaviour at moderate means.
 
 ## 4. Rainflow counting
 
