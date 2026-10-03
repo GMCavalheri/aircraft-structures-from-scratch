@@ -54,7 +54,7 @@ aircraft-structures-from-scratch/
 - [x] **Phase 1 — Stress/strain fundamentals**: implement stress transformation and von Mises criterion, validate with textbook examples.
 - [x] **Phase 2 — Beam theory**: implement Euler-Bernoulli bending/torsion for standard load cases, validate against closed-form deflection formulas.
 - [x] **Phase 3 — FEA solver**: build a 1D truss/beam finite element solver from scratch (stiffness matrix assembly, boundary conditions, solve), validate against Phase 2 closed-form results.
-- [ ] **Phase 4 — Buckling**: implement Euler buckling analysis for various end conditions, validate against classical critical load formulas.
+- [x] **Phase 4 — Buckling**: implement Euler buckling analysis for various end conditions, validate against classical critical load formulas.
 - [ ] **Phase 5 — Composite laminates**: implement Classical Lamination Theory, compute ABD matrix, apply Tsai-Wu failure criterion to a representative laminate stack-up.
 - [ ] **Phase 6 — Fatigue**: implement S-N curve fitting and Miner's rule cumulative damage, apply to a simulated variable-amplitude load spectrum (connects to the ML Structural Health Monitoring project).
 - [ ] **Phase 7 — Documentation and publishing**: theory notes per module, visualizations of stress fields, mode shapes, and fatigue life curves.

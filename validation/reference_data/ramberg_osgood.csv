@@ -1,0 +1,10 @@
+# Ramberg-Osgood shape parameters n for e = f/E + 0.002 (f/F0.2)^n (MIL-HDBK-5J Eq. 1.3.9).
+# [5J-F3.2.3.1.6(a)] MIL-HDBK-5J Figure 3.2.3.1.6(a): typical tensile and compressive
+#                    stress-strain curves, 2024-T3 sheet, thickness <= 0.249 in., room temperature.
+# These n values come from *typical* curves; pairing them with design (B-basis) yield values,
+# as the validation script does, is an approximation for illustration.
+material,direction,loading,n,source
+2024-T3,L,compression,15,[5J-F3.2.3.1.6(a)]
+2024-T3,LT,compression,11,[5J-F3.2.3.1.6(a)]
+2024-T3,L,tension,50,[5J-F3.2.3.1.6(a)]
+2024-T3,LT,tension,12,[5J-F3.2.3.1.6(a)]
