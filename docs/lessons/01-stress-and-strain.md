@@ -109,7 +109,7 @@ yield. Remove it and use the energy of the remaining *distortion*:
 \sigma_{vM} = \sqrt{\tfrac12\left[(\sigma_1-\sigma_2)^2 + (\sigma_2-\sigma_3)^2 + (\sigma_3-\sigma_1)^2\right]}
 ```
 
-The two agree in uniaxial tension and differ most in pure shear: $\sqrt3\,\tau$ for von Mises,
+The two agree in uniaxial tension and differ most in pure shear: $\sqrt3\ \tau$ for von Mises,
 $2\tau$ for Tresca. So von Mises predicts shear yield at $F_{ty}/\sqrt3 = 0.577F_{ty}$ and Tresca at
 $0.5F_{ty}$. Tests on aluminium alloys sit closer to von Mises. Tresca is the conservative
 choice.
@@ -130,8 +130,13 @@ For a linear isotropic material, with engineering shear strain $\gamma = 2\varep
 
 `compliance_matrix(E, nu)` returns this as a 6×6 matrix and `stiffness_matrix` returns its
 inverse. Two reductions matter:
-- **Plane stress** (thin sheet, $\sigma_z = 0$): $[D] = \dfrac{E}{1-\nu^2}\begin{bmatrix}1&\nu&0\\\nu&1&0\\0&0&\tfrac{1-\nu}{2}\end{bmatrix}$.
-  Note that $\varepsilon_z = -\nu(\sigma_x + \sigma_y)/E$ is *not* zero.
+- **Plane stress** (thin sheet, $\sigma_z = 0$). Note that $\varepsilon_z = -\nu(\sigma_x + \sigma_y)/E$
+  is *not* zero:
+
+  ```math
+  [D] = \frac{E}{1-\nu^2}\begin{bmatrix}1&\nu&0\\\nu&1&0\\0&0&\tfrac{1-\nu}{2}\end{bmatrix}
+  ```
+
 - **Plane strain** (thick part, $\varepsilon_z = 0$): a stiffer [D], with $\sigma_z = \nu(\sigma_x+\sigma_y)$.
 
 ## 6. Worked example
@@ -187,7 +192,7 @@ von_mises(s), tresca(s)  # (145.3e6, 162.8e6)
 2. A fuselage modelled as a thin cylinder of radius 2 m and skin thickness 1.6 mm is
    pressurised to 60 kPa. Hoop stress is pr/t and axial stress is pr/2t. Find the von Mises
    and Tresca stresses and the safety factors against 2024-T3 $F_{ty}$.
-3. Show that the von Mises stress of pure shear τ is $\sqrt3\,\tau$, and that Tresca gives 2τ.
+3. Show that the von Mises stress of pure shear τ is $\sqrt3\ \tau$, and that Tresca gives 2τ.
 4. A 0°/45°/90° strain-gauge rosette on 2024-T3 sheet reads ε0 = 600 µε, ε45 = 500 µε and
    ε90 = −100 µε. Find γxy, the stresses, and the principal stresses. Hint:
    $\varepsilon_{45} = (\varepsilon_x + \varepsilon_y + \gamma_{xy})/2$.
@@ -202,7 +207,7 @@ von_mises(s), tresca(s)  # (145.3e6, 162.8e6)
 2. Hoop 75.0 MPa, axial 37.5 MPa. σvM = 64.95 MPa and σTresca = 75.0 MPa: σ3 = 0 governs
    Tresca, because both in-plane stresses are tensile. SF = 5.10 (von Mises), 4.41 (Tresca).
 3. With σ1 = τ, σ2 = 0, σ3 = −τ:
-   $\sqrt{\tfrac12[\tau^2 + \tau^2 + 4\tau^2]} = \sqrt3\,\tau$, and σ1 − σ3 = 2τ.
+   $\sqrt{\tfrac12[\tau^2 + \tau^2 + 4\tau^2]} = \sqrt3\ \tau$, and σ1 − σ3 = 2τ.
 4. γxy = 2(500) − 600 − (−100) = 500 µε. With E = 72.4 GPa and ν = 0.33, the stresses are
    σx = 46.06 MPa, σy = 7.96 MPa, τxy = 13.61 MPa. Principal stresses 50.43 and 3.60 MPa at
    17.8°; σvM = 48.7 MPa.

@@ -20,13 +20,13 @@ length L):
 \mathbf k_{b} = \frac{EI}{L^3}\begin{bmatrix} 12 & 6L & -12 & 6L \\ 6L & 4L^2 & -6L & 2L^2 \\ -12 & -6L & 12 & -6L \\ 6L & 2L^2 & -6L & 4L^2 \end{bmatrix}
 ```
 
-Local quantities rotate to global axes with $\mathbf k_g = \mathbf T^{\mathsf T}\mathbf k\,\mathbf T$, where
+Local quantities rotate to global axes with $\mathbf k_g = \mathbf T^{\mathsf T}\mathbf k\ \mathbf T$, where
 $\mathbf T$ is block-diagonal in the direction cosines (c, s).
 
 ## Loads
 
 A distributed load q(x) is replaced by work-equivalent ("consistent") nodal forces
-$\mathbf f = \int \mathbf N^{\mathsf T} q\,dx$. For a uniform load:
+$\mathbf f = \int \mathbf N^{\mathsf T} q\ dx$. For a uniform load:
 
 ```math
 \mathbf f = \left[0,\; \frac{qL}{2},\; \frac{qL^2}{12},\; 0,\; \frac{qL}{2},\; -\frac{qL^2}{12}\right]^{\mathsf T}
@@ -48,8 +48,8 @@ resultant between the nodes. That is crude, and the convergence study shows what
 \mathbf K_{ff}\mathbf u_f = \mathbf F_f - \mathbf K_{fr}\mathbf u_r, \qquad \mathbf R = \mathbf K_{rf}\mathbf u_f + \mathbf K_{rr}\mathbf u_r - \mathbf F_r
 ```
 
-4. Element end forces $\mathbf f_e = \mathbf k\,\mathbf T\mathbf u_e - \mathbf f_{eq}$. The internal moment
-   $M(s) = -M_1 + V_1 s + \int_0^s q(t)(s-t)\,dt$ is exact for linear loads. Deflected shapes
+4. Element end forces $\mathbf f_e = \mathbf k\ \mathbf T\mathbf u_e - \mathbf f_{eq}$. The internal moment
+   $M(s) = -M_1 + V_1 s + \int_0^s q(t)(s-t)\ dt$ is exact for linear loads. Deflected shapes
    use Hermite interpolation.
 
 A mechanism gives a singular $\mathbf K_{ff}$, and the solver raises `LinAlgError`.

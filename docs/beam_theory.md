@@ -25,7 +25,7 @@ $(x-a)^n$ for $x \ge a$ and 0 otherwise:
 | Couple $M_0$ (counter-clockwise) | $-M_0\langle x-a\rangle^0$ |
 | Linear distributed load from a to b | $w_1\langle x-a\rangle^2/2 + s\langle x-a\rangle^3/6$, minus the same terms from b with $w_2$ |
 
-Integrating twice gives $EIv = \iint M\,dx\,dx + C_1x + C_2$. The `Beam` solver treats each support
+Integrating twice gives $EIv = \iint M\ dx\ dx + C_1x + C_2$. The `Beam` solver treats each support
 reaction as a point force (plus a couple at fixed supports) of unknown size. These and
 $C_1, C_2$ come from one square linear system:
 

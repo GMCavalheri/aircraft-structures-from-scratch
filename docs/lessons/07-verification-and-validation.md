@@ -66,7 +66,7 @@ than the solvers. Independent checks find errors on both sides.
 1. **A test with a wrong hand calculation.** The principal angle of (−20, 90, 60) MPa was
    expected at 68.74°. The code said 66.26°. The test was wrong: atan2(120, −110) is 132.51°,
    not 137.5°.
-2. **Rounded handbook coefficients.** $wL^4/185EI$ and $0.00652\,w_0L^4/EI$ disagreed with the
+2. **Rounded handbook coefficients.** $wL^4/185EI$ and $0.00652\ w_0L^4/EI$ disagreed with the
    solver at 2×10⁻³ and 3×10⁻⁴. The exact expressions agree to 10⁻⁹.
 3. **The wrong root.** The first exact propped-cantilever reference put the maximum deflection
    at $(15+\sqrt{33})L/32$ = 0.648L, which is not a stationary point at all. The roots of

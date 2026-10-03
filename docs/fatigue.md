@@ -5,7 +5,7 @@ Notebook: [`06_fatigue.ipynb`](../notebooks/06_fatigue.ipynb)
 
 ## Stress-life curves
 
-**Basquin**: $N = C\,S^{-m}$, a straight line in log–log axes. `fit_basquin` regresses log N on
+**Basquin**: $N = C\ S^{-m}$, a straight line in log–log axes. `fit_basquin` regresses log N on
 log S, with life as the dependent variable as in ASTM E739.
 
 **MIL-HDBK-5J equivalent stress.** The handbook folds every stress ratio $R = S_{min}/S_{max}$

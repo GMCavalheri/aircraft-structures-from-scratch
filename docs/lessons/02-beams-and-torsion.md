@@ -22,7 +22,7 @@
 ## 1. Euler–Bernoulli kinematics
 
 Assume plane cross-sections stay plane and perpendicular to the deflected axis. Then the axial
-strain varies linearly with the distance y from the neutral axis, $\varepsilon_x = -y\,v''$.
+strain varies linearly with the distance y from the neutral axis, $\varepsilon_x = -y\ v''$.
 Integrating the stress $E\varepsilon_x$ over the section gives the moment:
 
 ```math

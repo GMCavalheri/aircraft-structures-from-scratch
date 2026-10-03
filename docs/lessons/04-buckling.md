@@ -124,7 +124,7 @@ compression. That post-buckling behaviour is beyond this project.
 ## 5. Buckling as a finite element eigenproblem
 
 The extra moment Pv in Section 1 has an energy counterpart: the work done by the axial force as
-the member shortens through bending, $-\tfrac12\int N\,v'^2dx$. With the Hermite shape functions
+the member shortens through bending, $-\tfrac12\int N\ v'^2dx$. With the Hermite shape functions
 this gives the **geometric stiffness**, linear in the axial force N:
 
 ```math

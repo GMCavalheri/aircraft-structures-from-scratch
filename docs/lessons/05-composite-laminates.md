@@ -54,7 +54,7 @@ stiffness ($U_1$, $U_4$, $U_5$) does not depend on orientation at all.
 
 Kirchhoff plate kinematics apply: normals stay straight, so the strain through the thickness
 is $\boldsymbol\varepsilon(z) = \boldsymbol\varepsilon^0 + z\boldsymbol\kappa$. Integrating
-$\bar{\mathbf Q}_k\boldsymbol\varepsilon(z)$ over the thickness gives the force resultants **N**
+$\bar{\mathbf Q}^{(k)}\boldsymbol\varepsilon(z)$ over the thickness gives the force resultants **N**
 (N/m), and integrating the first moment gives the moment resultants **M** (N·m/m):
 
 ```math
@@ -117,7 +117,7 @@ number is the **strength ratio** SR.
   each stress.
 - **Tsai–Wu**: $F_1\sigma_1 + F_2\sigma_2 + F_{11}\sigma_1^2 + F_{22}\sigma_2^2 + F_{66}\tau_{12}^2 + 2F_{12}\sigma_1\sigma_2 = 1$.
   The linear terms let tensile and compressive strengths differ. $F_{12} = -\tfrac12\sqrt{F_{11}F_{22}}$
-  (Kaw's default) closes the envelope. Substituting SR·σ gives $a\,SR^2 + b\,SR - 1 = 0$.
+  (Kaw's default) closes the envelope. Substituting SR·σ gives $a\ SR^2 + b\ SR - 1 = 0$.
 
 Kaw's 60° lamina under $\sigma_x = 2S$, $\sigma_y = -3S$, $\tau_{xy} = 4S$ gives five different answers:
 

@@ -33,6 +33,12 @@ Plan: `AERO-02-aircraft-structures-from-scratch-PLAN.md` (tick the phase checkbo
   loads positive up (a downward load is negative).
 - Pure NumPy/SciPy — no FEA, beam or composite libraries.
 
+## Docs (GitHub-rendered math)
+- Display equations go in ```` ```math ```` fences (no Markdown processing inside).
+- Inline `$...$` is processed as Markdown first: no `\,` or `\;` (they become `,` `;`), no `\\`
+  row breaks (put matrices in a display block), and no `_` right after `}` `)` `]` (it starts
+  emphasis; write `A_{11}^{\ast}`, not `A^{\ast}_{11}`).
+
 ## Testing rules
 - Every test asserts against a closed-form result or a cited published value; name the source
   in a comment. Never loosen a tolerance to make a failing solver pass without explaining why.

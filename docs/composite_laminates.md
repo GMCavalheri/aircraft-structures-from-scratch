@@ -44,7 +44,7 @@ The structure of the matrices tells you what the layup does:
   $A_{12} = U_4h$ and $A_{66} = (A_{11}-A_{12})/2$.
 
 The effective in-plane moduli of a symmetric laminate come from $\mathbf A^{\ast} = \mathbf A^{-1}$:
-$E_x = 1/(hA^{\ast}_{11})$, $\nu_{xy} = -A^{\ast}_{12}/A^{\ast}_{11}$. Flexural moduli use
+$E_x = 1/(hA_{11}^{\ast})$, $\nu_{xy} = -A_{12}^{\ast}/A_{11}^{\ast}$. Flexural moduli use
 $\mathbf D^{\ast} = \mathbf D^{-1}$ and $12/h^3$.
 
 ![Angle-ply laminate constants](figures/laminate_angle_ply.png)
@@ -63,7 +63,7 @@ returns a strength ratio SR, the multiplier on the applied load that brings the 
 | Modified Tsai–Hill | same, with X and Y chosen by the signs of $\sigma_1$ and $\sigma_2$ |
 | Tsai–Wu | $F_1\sigma_1 + F_2\sigma_2 + F_{11}\sigma_1^2 + F_{22}\sigma_2^2 + F_{66}\tau_{12}^2 + 2F_{12}\sigma_1\sigma_2 = 1$, with $F_{12} = -\tfrac12\sqrt{F_{11}F_{22}}$ |
 
-For Tsai–Wu, substituting SR·σ gives $a\,SR^2 + b\,SR - 1 = 0$, which is solved in closed form.
+For Tsai–Wu, substituting SR·σ gives $a\ SR^2 + b\ SR - 1 = 0$, which is solved in closed form.
 
 **First-ply failure** is the smallest SR over all plies and points. **Ply-by-ply failure**
 then discounts each failed ply ($\bar{\mathbf Q} = 0$) and repeats the analysis until the

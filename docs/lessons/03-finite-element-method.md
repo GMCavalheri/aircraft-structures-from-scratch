@@ -36,7 +36,7 @@ A beam problem becomes a matrix problem. Everything below is a detail of how to 
 
 **Bar.** Axial displacement varies linearly between the nodes:
 $u(x) = (1-\xi)u_1 + \xi u_2$ with $\xi = x/L$. The strain is $(u_2 - u_1)/L$, and the strain
-energy $\tfrac12\int EA\,u'^2 dx$ gives
+energy $\tfrac12\int EA\ u'^2 dx$ gives
 
 ```math
 \mathbf k_{bar} = \frac{EA}{L}\begin{bmatrix} 1 & -1 \\ -1 & 1\end{bmatrix}
@@ -48,7 +48,7 @@ carries $(v, \theta)$ and the interpolation is cubic: the **Hermite** shape func
 ![Hermite shape functions](../figures/lessons/l3_hermite.png)
 
 With $v(x) = \mathbf N\mathbf d$ and curvature $v'' = \mathbf N''\mathbf d$, the bending energy
-$\tfrac12\int EI\,v''^2dx = \tfrac12\mathbf d^{\mathsf T}\mathbf k\,\mathbf d$ gives
+$\tfrac12\int EI\ v''^2dx = \tfrac12\mathbf d^{\mathsf T}\mathbf k\ \mathbf d$ gives
 
 ```math
 \mathbf k_b = \int_0^L EI\,\mathbf N''^{\mathsf T}\mathbf N''\,dx = \frac{EI}{L^3}\begin{bmatrix} 12 & 6L & -12 & 6L \\ 6L & 4L^2 & -6L & 2L^2 \\ -12 & -6L & 12 & -6L \\ 6L & 2L^2 & -6L & 4L^2\end{bmatrix}
@@ -94,14 +94,14 @@ singular otherwise. The solver turns SciPy's singular-matrix warning into a clea
 practical detail: the rotation of a node attached only to bars has no stiffness at all, so
 the solver restrains it automatically.
 
-**Post-processing.** Element end forces are $\mathbf f = \mathbf k\,\mathbf T\mathbf u_e - \mathbf f_{eq}$.
+**Post-processing.** Element end forces are $\mathbf f = \mathbf k\ \mathbf T\mathbf u_e - \mathbf f_{eq}$.
 The second term removes the element's own equivalent loads. Without it, a uniformly loaded
 beam would show the wrong end moments.
 
 ## 5. Loads: consistent versus lumped
 
-A distributed load q(x) does work $\int v\,q\,dx = \mathbf d^{\mathsf T}\int\mathbf N^{\mathsf T}q\,dx$.
-The work-equivalent ("consistent") nodal load vector is therefore $\int\mathbf N^{\mathsf T}q\,dx$.
+A distributed load q(x) does work $\int v\ q\ dx = \mathbf d^{\mathsf T}\int\mathbf N^{\mathsf T}q\ dx$.
+The work-equivalent ("consistent") nodal load vector is therefore $\int\mathbf N^{\mathsf T}q\ dx$.
 For a uniform load:
 
 ```math
@@ -161,7 +161,7 @@ displacements do.
 
 ## 9. Exercises
 
-1. Derive the bar stiffness matrix from the strain energy $\tfrac12\int_0^L EA\,u'^2dx$ with
+1. Derive the bar stiffness matrix from the strain energy $\tfrac12\int_0^L EA\ u'^2dx$ with
    linear shape functions.
 2. A symmetric two-bar truss spans 3 m with its apex 1 m high. E = 70 GPa, A = 400 mm², and a
    5 kN load acts down at the apex. Find the bar force and the apex deflection by hand, then
@@ -175,11 +175,21 @@ displacements do.
 <details>
 <summary>Answers</summary>
 
-1. $u' = (u_2 - u_1)/L$, so $U = \tfrac{EA}{2L}(u_2-u_1)^2 = \tfrac12[u_1\ u_2]\,\tfrac{EA}{L}\begin{bmatrix}1&-1\\-1&1\end{bmatrix}[u_1\ u_2]^{\mathsf T}$.
+1. $u' = (u_2 - u_1)/L$, so
+
+   ```math
+   U = \frac{EA}{2L}(u_2-u_1)^2 = \frac12\begin{bmatrix}u_1 & u_2\end{bmatrix}\frac{EA}{L}\begin{bmatrix}1&-1\\-1&1\end{bmatrix}\begin{bmatrix}u_1\\u_2\end{bmatrix}
+   ```
+
 2. Bar length 1.803 m, sin α = 0.5547. N = −P/(2 sin α) = −4.507 kN (compression).
-   δ = P L_b / (2EA sin²α) = 0.523 mm down.
-3. $\tfrac{EI}{L^3}\begin{bmatrix}12 & -6L\\ -6L & 4L^2\end{bmatrix}\begin{bmatrix}v_2\\\theta_2\end{bmatrix} = \begin{bmatrix}-P\\0\end{bmatrix}$
-   (the signs follow from the node-2 rows of $\mathbf k_b$). This gives $v_2 = -PL^3/3EI$ and
+   δ = P L / (2EA sin²α) with L = 1.803 m the bar length: 0.523 mm down.
+3. The node-2 rows and columns of $\mathbf k_b$ give
+
+   ```math
+   \frac{EI}{L^3}\begin{bmatrix}12 & -6L\\ -6L & 4L^2\end{bmatrix}\begin{bmatrix}v_2\\\theta_2\end{bmatrix} = \begin{bmatrix}-P\\0\end{bmatrix}
+   ```
+
+   This gives $v_2 = -PL^3/3EI$ and
    $\theta_2 = -PL^2/2EI$: exact, as Tong's theorem promises.
 4. $[3qL/20,\ qL^2/30,\ 7qL/20,\ -qL^2/20]$. Check: the forces sum to qL/2, the resultant.
 5. Consistent loads make the discrete problem the exact Galerkin projection. Because the
