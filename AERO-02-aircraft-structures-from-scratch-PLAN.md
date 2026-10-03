@@ -57,7 +57,7 @@ aircraft-structures-from-scratch/
 - [x] **Phase 4 — Buckling**: implement Euler buckling analysis for various end conditions, validate against classical critical load formulas.
 - [x] **Phase 5 — Composite laminates**: implement Classical Lamination Theory, compute ABD matrix, apply Tsai-Wu failure criterion to a representative laminate stack-up.
 - [x] **Phase 6 — Fatigue**: implement S-N curve fitting and Miner's rule cumulative damage, apply to a simulated variable-amplitude load spectrum (connects to the ML Structural Health Monitoring project).
-- [ ] **Phase 7 — Documentation and publishing**: theory notes per module, visualizations of stress fields, mode shapes, and fatigue life curves.
+- [x] **Phase 7 — Documentation and publishing**: theory notes per module, visualizations of stress fields, mode shapes, and fatigue life curves.
 
 ## Validation Strategy
 - Beam deflection/stress results checked against closed-form solutions (cantilever, simply supported, various load cases).
