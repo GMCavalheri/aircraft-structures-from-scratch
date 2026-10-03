@@ -49,12 +49,15 @@ The Macaulay solver matches nine closed-form cases to round-off. Four of them ar
 indeterminate: the propped cantilever, the fixed–fixed beam under uniform and point load, and
 the two-span continuous beam.
 
-**Two discrepancies found along the way, both in the references.** The textbook
+**Three discrepancies found along the way, all in the references.** The textbook
 coefficients 0.00652 (triangular load) and 1/185 (propped cantilever) are rounded and
 disagree with the solver at 3e-4 and 2e-3. The exact expressions, now in `closed_form.py`,
 agree to 1e-9. The first version also put the propped-cantilever maximum at the wrong root
 of the slope equation, $(15+\sqrt{33})L/32$ instead of $(15-\sqrt{33})L/16$, and the test
-caught it.
+caught it. Later, while writing Lesson 2, the off-centre point-load reference turned out to
+swap a and b. For loads left of midspan it returned the mirrored reaction and measured x_max
+from the wrong support. The original test only placed the load right of midspan; it now
+covers both sides.
 
 Bredt–Batho matches the exact annulus J of a thin tube to 1e-4, the thin-wall
 approximation error for t/r = 0.02. Details: [`beam_theory.md`](../validation/results/beam_theory.md).
