@@ -24,7 +24,7 @@ Every transcribed value carries its table or figure number in the CSV that holds
 | Stress/strain | Invariants under random rotations | 4.5e-16 change | 0 | round-off |
 | Beams | 9 standard cases (determinate and indeterminate) | max error 2e-9 | closed forms | ✔ |
 | Torsion | Thin tube, Bredt–Batho vs exact annulus J | −1.0e-4 | thin-wall approximation | ✔ |
-| FEA | Trusses, beams, L-frame, Macaulay cross-check | ≤ 2e-14 | hand / closed form | exact |
+| FEA | Trusses, beams, L-frame, Macaulay cross-check | ≤ 3e-14 | hand / closed form | exact |
 | FEA | Convergence order: lumped loads / interpolation | 2.00 / 4.00 | 2 / 4 | ✔ |
 | Buckling | FEA vs Euler, 4 end conditions, 16 elements | ≤ 3.3e-5 | π²EI/(KL)² | ✔ |
 | Buckling | Plate k at a/b = 1, 2, 3 and √2 | 4, 4, 4, 4.5 | Timoshenko & Gere | exact |
