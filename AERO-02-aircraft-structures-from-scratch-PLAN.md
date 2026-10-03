@@ -51,7 +51,7 @@ aircraft-structures-from-scratch/
 ```
 
 ## Execution Plan
-- [ ] **Phase 1 — Stress/strain fundamentals**: implement stress transformation and von Mises criterion, validate with textbook examples.
+- [x] **Phase 1 — Stress/strain fundamentals**: implement stress transformation and von Mises criterion, validate with textbook examples.
 - [ ] **Phase 2 — Beam theory**: implement Euler-Bernoulli bending/torsion for standard load cases, validate against closed-form deflection formulas.
 - [ ] **Phase 3 — FEA solver**: build a 1D truss/beam finite element solver from scratch (stiffness matrix assembly, boundary conditions, solve), validate against Phase 2 closed-form results.
 - [ ] **Phase 4 — Buckling**: implement Euler buckling analysis for various end conditions, validate against classical critical load formulas.
