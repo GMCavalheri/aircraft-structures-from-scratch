@@ -69,8 +69,9 @@ than the solvers. Independent checks find errors on both sides.
 2. **Rounded handbook coefficients.** $wL^4/185EI$ and $0.00652\,w_0L^4/EI$ disagreed with the
    solver at 2×10⁻³ and 3×10⁻⁴. The exact expressions agree to 10⁻⁹.
 3. **The wrong root.** The first exact propped-cantilever reference put the maximum deflection
-   at $(15+\sqrt{33})L/32$, a stationary point outside the physical maximum. The solver was
-   right.
+   at $(15+\sqrt{33})L/32$ = 0.648L, which is not a stationary point at all. The roots of
+   v′ = 0 are $(15 \pm \sqrt{33})L/16$, and only the minus sign lies on the beam (0.5785L).
+   The solver was right.
 4. **A sign expectation.** A counter-clockwise couple at the right end of a simply supported
    beam was expected to hog the beam. It sags it. The test was fixed, after a free-body
    diagram.
@@ -112,7 +113,7 @@ writing down why.
 
 - **Provenance.** Every transcribed number carries its document and table, e.g.
   `[5J-3.2.3.0(b1)]`. A value that could not be checked against its source was left out.
-  AS4/3501-6 was dropped because MIL-HDBK-17-2F lists no shear data for it.
+  AS4/3501-6 was dropped because MIL-HDBK-17-2F Sec. 4.2.12 has no in-plane shear data for it.
 - **Basis.** A- and B-basis allowables are statistical lower bounds. Typical values and means
   are not. The tangent-modulus column pairs a *typical* Ramberg–Osgood n with a B-basis yield
   stress, and the data file says so.
