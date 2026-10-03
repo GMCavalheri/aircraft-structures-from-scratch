@@ -8,12 +8,16 @@ Plan: `AERO-02-aircraft-structures-from-scratch-PLAN.md` (tick the phase checkbo
 - `uv sync` — install deps (numpy, scipy, matplotlib; dev: pytest, ruff, nbclient)
 - `uv run pytest` — tests
 - `uv run ruff check . && uv run ruff format --check .` — lint/format (CI runs both)
-- `uv run python validation/<script>.py` — regenerate validation figures into `docs/figures/`
+- `uv run python validation/run_all.py` — regenerate every validation figure (`docs/figures/`)
+  and results table (`validation/results/`); single scripts also run on their own
+- `uv run python notebooks/build_notebooks.py` — regenerate and execute the notebooks (edit cell
+  sources there, never the .ipynb JSON); rebuilds are byte-identical
 
 ## Layout
 - `src/structures/` — single package; subpackages mirror the plan: `materials`, `stress_strain`,
   `beam_theory`, `fea_solver`, `buckling`, `composite_laminates`, `fatigue`; `plotting.py` shared.
 - `tests/` — pytest, one file per module. `validation/` — scripts + cited reference data.
+- `docs/` — theory note per module, validation report, figures. `notebooks/` — executed demos.
 
 ## Conventions
 - **SI units internally** (N, m, Pa). Helpers that take or return other units say so in the
