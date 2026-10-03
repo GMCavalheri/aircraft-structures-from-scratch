@@ -1,0 +1,19 @@
+# Design allowables for metallic alloys, transcribed from MIL-HDBK-5J, "Metallic Materials and
+# Elements for Aerospace Vehicle Structures", 31 January 2003 (Distribution Statement A, approved
+# for public release). Values are as printed (ksi, 10^3 ksi, lb/in^3); the loader converts to SI.
+# Strengths are longitudinal (L) grain direction; Fsu has no grain direction in the tables.
+# Later MMPDS editions may revise these values: fine for teaching, not for certification work.
+#
+# [5J-3.2.3.0(b1)] Table 3.2.3.0(b1), 2024 bare sheet, AMS 4037 / AMS-QQ-A-250/4, T3, 0.010-0.128 in.
+# [5J-3.7.6.0(b1)] Table 3.7.6.0(b1), 7075 sheet, AMS 4045 / AMS-QQ-A-250/12, T6, 0.040-0.125 in.
+# [5J-5.4.1.0(b)]  Table 5.4.1.0(b), Ti-6Al-4V sheet, AMS 4911, annealed, <= 0.1875 in.
+# [5J-2.3.1.0(f1)] Table 2.3.1.0(f1), AISI 4340 bar/forging/tubing, AMS 6414, quenched and
+#                  tempered to Ftu = 260 ksi.
+key,description,basis,Ftu_ksi,Fty_ksi,Fcy_ksi,Fsu_ksi,E_msi,Ec_msi,G_msi,nu,density_lb_in3,source
+2024-T3,2024-T3 bare sheet 0.010-0.128 in,A,64,47,39,39,10.5,10.7,4.0,0.33,0.100,[5J-3.2.3.0(b1)]
+2024-T3,2024-T3 bare sheet 0.010-0.128 in,B,65,48,40,40,10.5,10.7,4.0,0.33,0.100,[5J-3.2.3.0(b1)]
+7075-T6,7075-T6 sheet 0.040-0.125 in,A,78,70,69,47,10.3,10.5,3.9,0.33,0.101,[5J-3.7.6.0(b1)]
+7075-T6,7075-T6 sheet 0.040-0.125 in,B,80,72,71,48,10.3,10.5,3.9,0.33,0.101,[5J-3.7.6.0(b1)]
+Ti-6Al-4V,Ti-6Al-4V annealed sheet <= 0.1875 in,A,134,126,133,87,16.0,16.4,6.2,0.31,0.160,[5J-5.4.1.0(b)]
+Ti-6Al-4V,Ti-6Al-4V annealed sheet <= 0.1875 in,B,139,131,138,90,16.0,16.4,6.2,0.31,0.160,[5J-5.4.1.0(b)]
+4340,AISI 4340 steel quenched and tempered (260 ksi),S,260,217,235,156,29.0,29.0,11.0,0.32,0.283,[5J-2.3.1.0(f1)]
